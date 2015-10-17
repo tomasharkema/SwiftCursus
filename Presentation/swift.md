@@ -28,6 +28,88 @@
 # Swift
 ### vanuit _*Java*_
 #### functioneel!!
+
+---
+
+# Historie
+
+- C 
+- C++
+- Objective C
+- Java
+- ...
+- Haskell, Coffescript, Clojure, Python, ...
+- *Swift*
+
+---
+
+# _*C*_? _*Pointers*_?
+
+---
+
+```java
+Foo foo = new Foo(); 	// allocate memory for foo
+foo; 					// reference to memory containing foo object
+foo.barMethod();		// call method on reference containing java object
+
+foo.bar = new Bar();	
+
+// assign newly allocated Bar memory reference
+// to bar reference space 
+// in reference memory containing java object
+```
+
+---
+
+# _*Alles*_ gaat via _*references*_
+
+---
+
+# Thermostaat
+
+---
+
+# Thermostaat
+
+```javaHouse home = new House()Temperature temp = Temperature()temp.fahrenheit = 75home.thermostat.temperature = temp
+```
+
+---
+
+# Thermostaat
+
+```java
+House home = new House()Temperature temp = Temperature()temp.fahrenheit = 75home.thermostat.temperature = temp
+temp.fahrenheit = 425home.oven.temperature = temphome.oven.bake()
+```
+
+---# Thermostaat
+```java
+House home = new House()Temperature temp = Temperature()temp.fahrenheit = 75home.thermostat.temperature = temp
+temp.fahrenheit = 425home.oven.temperature = temphome.oven.bake()
+```![right, fit](Schermafdruk 2015-10-17 23.04.08.png)
+
+---
+
+```java
+House home = new House()Temperature temp = Temperature()temp.fahrenheit = 75home.thermostat.temperature = temp.copy()
+temp.fahrenheit = 425home.oven.temperature = temp.copy()home.oven.bake()
+```
+
+---
+
+# _*VALUETYPES*_!
+
+#### Swift doet dit _*automagisch*_
+
+---
+
+```swift
+struct Temperature {
+	let temprature: Float
+}
+```
+
 ---
 
 ```java
@@ -36,7 +118,7 @@ import Leviosa
 import MovableObject
 import Attachment
 
-public class WimgardiumLeviosa extends Magic implements Leviosa {
+public class WingardiumLeviosa extends Magic implements Leviosa {
 
 	private State state;
 	
@@ -68,7 +150,7 @@ import Leviosa
 import MovableObject
 import Attachment
 // Imports?
-public class WimgardiumLeviosa extends Magic implements Leviosa {
+public class WingardiumLeviosa extends Magic implements Leviosa {
 // het is leviosáá, niet leviosâh
 	private State state;
 	// kan null zijn
