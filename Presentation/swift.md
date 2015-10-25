@@ -3,8 +3,16 @@
 
 ---
 
-# Download Xcode
+# _Join slack!_
+
+## hva-ict.slack.com
+
+---
+
+# _*Download*_ Xcode
 ### _*en wel nu*_
+
+#### Mac App Store
 
 --- 
 
@@ -14,9 +22,8 @@
 
 # Wat kan ik na deze *cursus*?
 - Je kan _*Swift*_
-- Je kan in basis _*Functioneel Programmeren*_
+- Je kent _*functionele features*_ van _*Swift*_
 - Je kan een simpele _*iOS app*_ in elkaar zetten
-- 
 
 ---
 
@@ -37,76 +44,186 @@
 - C++
 - Objective C
 - Java
-- ...
-- Haskell, Coffescript, Clojure, Python, ...
+- Rust, Haskell, Ruby, Python
 - *Swift*
 
 ---
 
-# _*C*_? _*Pointers*_?
+# C
 
----
+```c
+#include <stdio.h>
 
-```java
-Foo foo = new Foo(); 	// allocate memory for foo
-foo; 					// reference to memory containing foo object
-foo.barMethod();		// call method on reference containing java object
-
-foo.bar = new Bar();	
-
-// assign newly allocated Bar memory reference
-// to bar reference space 
-// in reference memory containing java object
+int main(void)
+{
+    printf("hello, world\n");
+}
 ```
 
 ---
 
-# _*Alles*_ gaat via _*references*_
+# C++
+
+```c++
+#include <stdio.h>
+
+// The HelloWorld class definition. 
+class HelloWorld { 
+        public: 
+    HelloWorld() {}            // Constructor. 
+    ~HelloWorld() {}          // Destructor. 
+    void print() { 
+        printf("Hello World!\n"); 
+    } 
+};
+
+// The main progam. 
+int main() { 
+    HelloWorld a;           // Create a HelloWorld object. 
+    a.print();                  // Send a "print" message to the object. 
+    return 0; 
+} 
+```
 
 ---
 
-# Thermostaat
+# OBJECTIVE-C
+
+```objc
+#import <Foundation/Foundation.h>
+
+@interface HelloWorld
+@end
+
+@implementation HelloWorld
+
+-(void)print
+{
+	NSLog(@"Hello World!");
+}
+
+@end
+
+// main program.
+int main(int argc, const char * argv[]) {
+	HelloWorld *a = [[HelloWorld alloc] init];
+	[a print];
+	return 0;
+}
+```
 
 ---
 
-# Thermostaat
-
-```javaHouse home = new House()Temperature temp = Temperature()temp.fahrenheit = 75home.thermostat.temperature = temp
-```
-
----
-
-# Thermostaat
+# java
 
 ```java
-House home = new House()Temperature temp = Temperature()temp.fahrenheit = 75home.thermostat.temperature = temp
-temp.fahrenheit = 425home.oven.temperature = temphome.oven.bake()
-```
+public class HelloWorld {
+	public void print() {
+		System.out.println("Hello World");
+	}
+}
 
----# Thermostaat
-```java
-House home = new House()Temperature temp = Temperature()temp.fahrenheit = 75home.thermostat.temperature = temp
-temp.fahrenheit = 425home.oven.temperature = temphome.oven.bake()
-```![right, fit](Schermafdruk 2015-10-17 23.04.08.png)
+// main program.
+
+public class Main {
+	public static void main(String[] args) {
+		HelloWorld a = new HelloWorld();
+		a.print();
+    }
+}
+
+```
+
+---
+
+#swift
+
+```swift
+class HelloWorld {
+	func printHello() {
+		print("Hello World!")
+	}
+}
+
+let a = HelloWorld()
+a.print()
+```
+
+---
+
+# _*SWIFT*_ is
+- _Multi-paradigm_ (Protocol-oriented programming, object-oriented, functional, imperative, block structured)
+- Static-, strong-, inferred typed
+- Compiled
+- Auto Reference Counted (_*ARC*_)
+
+---
+
+# SYNTAX
+
+---
+
+# SYNTAX
+- `var` / `let`
+- `class`
+- `struct`
+- `enum`
+- Closures
 
 ---
 
 ```java
-House home = new House()Temperature temp = Temperature()temp.fahrenheit = 75home.thermostat.temperature = temp.copy()
-temp.fahrenheit = 425home.oven.temperature = temp.copy()home.oven.bake()
-```
-
----
-
-# _*VALUETYPES*_!
-
-#### Swift doet dit _*automagisch*_
+public String string;
+```
 
 ---
 
 ```swift
-struct Temperature {
-	let temprature: Float
+var string: String
+```
+
+---
+
+```java
+public final String string;
+```
+
+---
+
+```swift
+let string: String
+```
+
+---
+
+# `class`
+
+---
+
+```java
+public class Foo extends Bar implements Dough {
+
+	private String string;
+	
+	public String getString() {
+		return string;
+	}
+	
+	public void doSomething() {
+		//...
+	}
+}
+``` 
+
+---
+
+```swift
+class Foo: Bar, Dough {
+	let string: String
+	
+	func doSomething() {
+		//...
+	}
 }
 ```
 
@@ -133,10 +250,10 @@ public class WingardiumLeviosa extends Magic implements Leviosa {
 	public Leviosa.LeviosaMovement applyToObject(MovableObject object) {
 		if (object.attachment == Attachment.ToGround) {
 			state = State.DoingNothing;
-			return LeviosaMovement.StuckToGround;
+			return Leviosa.LeviosaMovement.StuckToGround;
 		}
 		state = State.DoingSomething;
-		return LeviosaMovement.Flying;
+		return Leviosa.LeviosaMovement.Flying;
 	}
 	
 }
@@ -152,8 +269,8 @@ import Attachment
 // Imports?
 public class WingardiumLeviosa extends Magic implements Leviosa {
 // het is leviosáá, niet leviosâh
-	private State state;
-	// kan null zijn
+	private State state; // kan null zijn
+	
 	@Override @Nullable // compilecheck?
 	public MagicTrick doMagicTrick(Context context) {
 		if (state.isDoingSomethingAlready()) { // NullPointerException
@@ -163,12 +280,12 @@ public class WingardiumLeviosa extends Magic implements Leviosa {
 	}
 	// public?
 	public Leviosa.LeviosaMovement applyToObject(MovableObject object) {
-		if (object.attachment == Attachment.ToGround) {
-			state = State.DoingNothing;
-			return LeviosaMovement.StuckToGround;
+		if (object.attachment == Attachment.ToGround) { // Attachment al bekent
+			state = State.DoingNothing; // State al bekent
+			return Leviosa.LeviosaMovement.StuckToGround; // LeviosaMovement is al bekent
 		}
-		state = State.DoingSomething;
-		return LeviosaMovement.Flying; // LeviosaMovement is al bekent
+		state = State.DoingSomething; // State is al bekent
+		return Leviosa.LeviosaMovement.Flying; // LeviosaMovement is al bekent
 	}
 	
 }
@@ -199,24 +316,518 @@ class WimgardiumLeviosá : Magic, Leviosa {
 	
 }
 ```
----
-
-# _*Optionals*_?
 
 ---
 
-# _*Optionals*_?
+# `class`
 
-### Ik ben er wel, of niet. _*EXPLICIET*_
+- members zijn _*muteerbaar*_ in zelfde instance
+- Inheritance
+- Composition _*(`protocol`)*_
+- Zelf _*definieerbare*_ initializers
+- zijn _*extendable*_
 
 ---
 
 ```swift
-enum Optional<T> {
-	case Some(T)
-	case None
+class Foo {
+	func limitedBehavior() { }
+}
+
+// even in other file
+extension Foo {
+	func extendedBehavoir() { }
+}
+
+let foo = Foo()
+foo.limitedBehavior()
+foo.extendedBehavoir()
+```
+
+---
+
+# extend _*Foundation*_ classes
+
+```swift
+class NSDate { /*compiled source*/ }
+
+extension NSDate {
+	func format(format: String) -> String {
+		return "" // some format
+	}
 }
 ```
+
+---
+
+# `struct`
+
+---
+
+
+```java
+Foo foo = new Foo(); 	// allocate memory for foo
+foo; 					// reference to memory containing foo object
+foo.barMethod();		// call method on reference containing java object
+
+foo.bar = new Bar();	
+
+// assign newly allocated Bar memory reference
+// to bar reference space 
+// in reference memory containing java object
+```
+
+---
+
+# _*Alles*_ gaat via _*references*_
+
+---
+
+# Webwinkel
+
+---
+
+# Webwinkel
+
+```javaProduct home = new Auto();Price price = new Price();
+price.currency = Currency.EUR;price.price = 1000;
+
+home.price = price;
+```
+
+---
+
+```java
+public enum Currency {
+	EUR, DOL
+}
+
+public class Price {
+	public Currency currency;
+	public int value; // in cents
+}
+
+public abstract class Product {
+	public Price price;
+	//...
+}
+
+```
+
+`/Examples/java-references`
+
+---
+
+# Webwinkel
+
+```java
+Product auto = new Auto();
+Product house = new House();
+Price price = new Price();
+price.currency = Currency.EUR;price.value = 1000;
+
+auto.price = price;
+
+price.currency = Currency.DOL;
+price.value = 10000000;
+
+house.price = price;```
+
+---# Webwinkel
+
+```java
+Product auto = new Auto();
+Product house = new House();
+Price price = new Price();
+price.currency = Currency.EUR;price.value = 1000;
+
+auto.price = price;
+
+price.currency = Currency.DOL;
+price.value = 10000000;
+
+house.price = price;
+
+// auto.price?```
+
+---
+
+```java
+Product auto = new Auto();
+Product house = new House();
+Price price1 = new Price();
+price1.currency = Currency.EUR;price1.value = 1000;
+
+auto.price = price1;
+
+Price price2 = new Price();
+
+price2.currency = Currency.DOL;
+price2.value = 10000000;
+
+house.price = price2;
+```
+
+---
+
+# _*VALUETYPES*_!
+
+#### Swift doet dit _*automagisch*_
+
+---
+
+# _*`struct`*_
+### structure
+
+---
+
+```swift
+struct Price {
+	var currency: Currency
+	var value: Int
+}
+```
+
+---
+
+```swift
+enum Currency: Int {
+  case EUR = 1.0000
+  case DOL = 0.9879
+}
+
+protocol Product {
+  var price: Price { get set }
+}
+
+struct Price {
+  var currency: Currency
+  var value: Int
+}
+
+struct Auto: Product {
+  var price: Price
+}
+
+struct House: Product {
+  var price: Price
+}
+
+```
+
+---
+
+```swift
+var price = Price(currency: .EUR, value: 1000)
+let auto = Auto(price: price)
+
+price.currency = .DOL
+price.value = 10000000
+
+let house = House(price: price)
+
+print(auto)
+print(house)
+```
+
+`/Examples/structs.playground`
+
+---
+
+# `struct`
+- Members zijn _*muteerbaar*_, nieuwe instance
+- Inheritance, Composition, _*Extendable*_
+- Zelf _*definieerbare*_ initializers
+
+---
+
+# `enum`
+
+---
+
+```swift
+enum Currency {
+  case €
+  case $
+  case ₽
+}
+```
+
+---
+
+```swift
+enum Currency: Double {
+  case € = 1.0000
+  case $ = 0.9879
+  case ₽ = 0.0146
+}
+```
+---
+
+```swift
+let currency = //...
+
+if currency == .€ {
+	print("Uit Europa!")
+} else {
+	print("Ergens anders")
+}
+```
+
+---
+
+```swift
+let currency = //...
+
+if currency == .€ {
+	print("Uit Europa!")
+} else if currency == .₽ {
+	print("Россия-Матушка")
+} else {
+	print("Ergens anders")
+}
+```
+
+---
+
+```swift
+switch currency {
+case .€:
+	print("Uit Europa!")
+case .₽:
+	print("Россия-Матушка")
+default:
+	print("Ergens anders")
+}
+```
+
+---
+
+```swift
+switch currency {
+case .€:
+	print("Uit Europa!")
+case .₽:
+	print("Россия-Матушка")
+case .$:
+	break
+}
+```
+
+---
+
+```swift
+switch currency {
+case .€:
+	print("Uit Europa!")
+case .₽, .$:
+	print("Niet uit Europa")
+}
+```
+
+---
+
+# `enum:` _*associated*_ values
+
+---
+
+# BARCODE
+
+---
+
+```java
+public interface Barcode {
+	public String getValue();
+	public BarcodeType getType();
+}
+
+public enum BarcodeType {
+	UPCA, QRCode
+}
+
+public class BarcodePrinter {
+	public static void printBarcode(Barcode barcode) {
+		switch barcode.getType() {
+			case UPCA:
+				//...
+				break;
+			case QRCode:
+				//...
+				break;
+		}
+	}
+}
+```
+
+---
+
+```java
+public interface Barcode {
+	public String getValue();
+}
+
+public class UPCA implements Barcode {
+	private int numberSystem;
+	private int manufacturer;
+	private int product;
+	private int check;
+	
+	public BarcodeType getType() { return BarcodeType.UPCA; }
+	
+	public String getValue() {
+		return numberSystem + " " + " " + manufacturer + " "
+		 	+ product + " " + check
+	}
+}
+
+```
+
+---
+
+```java
+public class UPCA implements Barcode {
+	private int numberSystem;
+	private int manufacturer;
+	private int product;
+	private int check;
+	
+	public BarcodeType getType() { return BarcodeType.UPCA; }
+	
+	public String getValue() {
+		return numberSystem + " " + " " + manufacturer + " " 
+			+ product + " " + check
+	}
+}
+
+public class QRCode implements Barcode {
+	private String value;
+	
+	public BarcodeType getType() { return BarcodeType.QRCode; }
+	
+	public String getValue() {
+		return value;
+	}
+}
+```
+
+---
+
+## hoop _*code*_ voor
+
+```java 
+public enum BarcodeType {
+	UPCA, QRCode
+}
+```
+
+---
+
+```swift
+enum Barcode {
+    case UPCA(Int, Int, Int, Int)
+    case QRCode(String)
+}
+```
+
+---
+
+```swift
+let productBarcode = Barcode.UPCA(8, 85909, 51226, 3)
+
+switch productBarcode {
+case .UPCA(let numberSystem, let manufacturer, let product, let check):
+    print("UPC-A: \(numberSystem), \(manufacturer), \(product), \(check).")
+case .QRCode(let productCode):
+    print("QR code: \(productCode).")
+}
+```
+
+---
+
+```java
+class ApiResult<T, E> {
+	public T result;
+	public E error;
+	
+	public boolean isSuccessful() {
+		return result != null;
+	}
+	
+	public boolean hasErrorButHasResult() {
+		return result != null && error != null
+	}	
+	
+}
+
+API.getUsers() // returns ApiResult<List<User>, NetworkError>
+
+```
+
+---
+
+```java
+ApiResult<> apiResult = API.getUsers();
+
+if (apiResult.isSuccessful()) {
+	List<Users> users = apiResult.result;
+} else {
+	NetworkError error = apiResult.error;
+}
+
+```
+
+---
+
+```java
+ApiResult<> apiResult = API.getUsers();
+
+if (apiResult.isSuccessful()) {
+	List<Users> users = apiResult.result;
+	
+} else if (apiResult.hasErrorButAlsoHasResult()) {
+	//...?
+	
+} else {
+	NetworkError error = apiResult.error; // NullPointerException?
+}
+
+```
+
+---
+
+```swift
+enum ApiResult<T> {
+	case Success(T)
+	case Error(NSError)
+}
+
+let result = API.getUsers() // returns ApiResult<[User]>
+
+```
+
+---
+
+```swift
+let apiResult = API.getUsers()
+
+switch apiResult {
+	case let .Success(users):
+		print("er zijn \(users.count)")
+		
+	case let .Error(error):
+		print(error)
+}
+```
+
+---
+
+# _*Optionals*_
+
+---
+
+# _*Optionals*_
+
+### Ik ben er wel, of niet. _*EXPLICIET*_
 
 ---
 
@@ -252,8 +863,8 @@ let knownName = "Tomas"
 
 ```swift
 
-let unknownName: NilConvertible = nil
-let knownName: String = "Tomas"
+let unknownName: String? = nil
+let knownName: String? = "Tomas"
 
 ```
 
@@ -320,15 +931,177 @@ struct FullName {
   let familyName: String
 
   var fullName: String {
-    let unwrappedMiddleName = middleName.map { " \($0)" } ?? ""
-    return "\(preName)\(unwrappedMiddleName) \(familyName)"
+	
+	if let middleName = middleName {
+		return "\(preName) \(middleName) \(familyName)"
+	}  
+    return "\(preName) \(familyName)"
   }
 }
 ```
 
 ---
 
-# `map`?
+# Closures
+
+---
+
+```java
+Button button = findViewByID(R.id.button);
+// click!
+```
+
+---
+
+```java
+class MainActivity extends Activity implements View.OnClickListener {
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState); // nooit super vergeten!
+		
+		final Button button = findViewByID(R.id.button);
+		button.setOnClickListener(this);
+	}
+
+	public void onClick(View view) {
+		switch (view.getId()) {
+			case R.id.button:
+				// click
+				break;
+		}
+	}
+}
+```
+
+---
+
+# java 1.1 Anonymous classes 
+
+```java
+final Button button = findViewByID(R.id.button);
+
+button.setOnClickListener(new View.OnClickListener() {
+	public void onClick(View view) {
+		// click!
+	}
+});
+```
+
+---
+
+# java 8 lambdas
+
+```java
+final Button button = findViewByID(R.id.button);
+
+button.setOnClickListener((view) -> {
+	// click!
+});
+```
+
+---
+
+```javascript
+$(".button").click(function() {
+	console.log("click!");
+});
+```
+
+---
+
+```swift
+let inlineFunction = {
+	print("hallo!")
+}
+
+inlineFunction() // hallo!
+```
+
+---
+
+```swift
+let inlineFunction = { message: String in
+	print("hallo \(message)!")
+}
+
+inlineFunction("wereld") // hallo wereld!
+```
+
+---
+
+# TYPE?
+
+---
+
+## `Void -> Void`
+
+---
+
+## `String -> ()`
+
+---
+
+```swift
+let closure: String -> String = { text in
+	text
+}
+
+let closure = { (text: String) in
+	text
+}
+
+func function(text: String) -> String {
+	return text
+}
+
+// type closure?
+// type function?
+
+```
+
+---
+
+## `String -> String`
+
+---
+
+# Constructor `UIAlertAction`
+
+```swift
+UIAlertAction(
+	title: String?,
+	style: UIAlertActionStyle, 
+	handler: ((UIAlertAction) -> Void)?
+)
+```
+
+---
+
+```swift
+UIAlertAction(title: "Message", style: .Default, handler: { action in
+	// message
+})
+```
+
+---
+
+# tailing closure
+
+```swift
+UIAlertAction(title: "Message", style: .Default) { action in
+	// message
+}
+```
+
+---
+
+# SWIFT
+## _*Functioneel*_
+
+---
+
+# `map`
 
 ---
 
@@ -368,21 +1141,41 @@ print(intArray) // [123, 456, 789]
 ```swift
 let array = ["123", "456", "789"]
 
-let intArray = array.map { string in
+let intArray = array.map({ string in
 	return Int(string)
-}
+})
 
 print(intArray) // [123, 456, 789]
 
 ```
+
 ---
+
 
 ```swift
 let array = ["123", "456", "789"]
 
-let intArray = array.map { string in
-	return Int(string)
+func stringToInt(element: String) -> Int {
+	return Int(element)
 }
+
+let intArray = array.map(stringToInt)
+
+// [String] -> [Int]
+print(intArray) // [123, 456, 789]
+
+```
+
+---
+
+
+```swift
+let array = ["123", "456", "789"]
+
+let intArray = array.map({ element in
+	return Int(element)
+})
+
 // [String] -> [Int]
 print(intArray) // [123, 456, 789]
 
@@ -433,11 +1226,11 @@ func map<A, B>(array: [A], transform: (A -> B) ) -> [B] {
 
 ```swift
 func filter<A>(elements: [A], 
-	elementIncluded: (A -> Bool) ) -> [A] {
+	predicate: (A -> Bool) ) -> [A] {
 	
 	var newArray = [A]()
 	for element in elements {
-		if elementIncluded(element) { newArray.append(element) }
+		if predicate(element) { newArray.append(element) }
 	}
 	return newArray
 }
@@ -471,7 +1264,7 @@ let middleNames = names
 
 ---
 
-#`[A] -> A`
+#`[A] -> B`
 
 ---
 
@@ -483,7 +1276,7 @@ let middleNames = names
 ```swift
 let ints = [1,2,3,4,5] // [Int]
 
-let sum = ... // Int
+let sumFromInts = ... // Int
 
 ```
 
@@ -492,39 +1285,55 @@ let sum = ... // Int
 ```swift
 let ints = [1,2,3,4,5] // [Int]
 
-var sum: Int = 0
+var sumFromInts: Int = 0
 
-for int in ints {
-	sum += int
+for element in ints {
+	sumFromInts = sumFromInts + element
 }
 
 ```
 
 ---
 
-### `reduce()`
+```swift
+
+let ints = [1,2,3,4,5]
+
+let sumFromInts = ints.reduce(0, { sum, element in
+	return sum + element
+})
+
+```
 
 ---
 
-### `reduce(initialValue: Int)`
+```swift
 
-#### `var sum: Int = 0`
+let ints = [1,2,3,4,5]
+
+var productFormInts = 1
+
+for element in ints {
+	productFormInts = productFormInts * element
+}
+
+```
 
 ---
+```swift
 
-### `reduce(initialValue: Int, combine: (Int, Int) -> Int)`
-#### `sum += int`
+let ints = [1,2,3,4,5]
+
+let productFormInts = reduce(1, { product, element in
+	return product * element
+})
+```
 
 ---
 
 # `(Int, Int) -> Int`
 
 ---
-
-# `(Int, Int) -> Int`
-### doet ergens aan denken?
----
-
 
 # `+ - * /`
 
@@ -532,22 +1341,26 @@ for int in ints {
 
 ```swift
 func +(lhs: Int, rhs: Int) -> Int {
-	return lhs + rhs
+	// implementation...
 }
 func -(lhs: Int, rhs: Int) -> Int {
-	return lhs - rhs
+	// implementation...
 }
 func *(lhs: Int, rhs: Int) -> Int {
-	return lhs * rhs
+	// implementation...
 }
 func /(lhs: Int, rhs: Int) -> Int {
-	return lhs / rhs
+	// implementation...
 }
 ```
 
 ---
 
-# `+` op string?
+### waar geld dit nog meer?
+
+---
+
+# `+` op string
 
 ---
 
@@ -561,24 +1374,26 @@ let names = ["King", "Potter"]
 var present = "Mensen die aanwezig zijn:"
 
 for name in names {
-	present += " " + name
+	present = present + " " + name
 }
 
-print(present) // "Mensen die aanwezig zijn: King, Potter"
+print(present) // "Mensen die aanwezig zijn: King Potter"
 
 ```
 
 ---
 
-#### `reduce(initialValue: String, combine: (String, String) -> String) -> String`
+```swift
+let names = ["King", "Potter"]
 
-##### `var present = "Mensen die aanwezig zijn:"`
-##### `present +=`
+let present = reduce("Mensen die aanwezig zijn:", { present, name in
+	return present + " " + name
+})
 
----
 
-## `(String, String) -> String`
-#### `present += " " + name`
+print(present) // "Mensen die aanwezig zijn: King Potter"
+
+```
 
 ---
 
@@ -587,345 +1402,72 @@ print(present) // "Mensen die aanwezig zijn: King, Potter"
 
 ---
 
-# `[A] -> B`
-
----
-
 ```swift
 let names = [potter, king]
 
 let present = names.reduce("De aanwezigheid is") { prev, name in
-	prev += " " + name.familyName
+	return prev + " " + name.familyName
 }
 
 ```
 
 ---
 
----
-
-#`enum`
+# ☕️
 
 ---
 
-```swift
-enum Optional<T> {
-	case Some(T)
-	case None
-}
-```
+# Let's build some _*App*_!
 
 ---
 
-```java
-class ApiResult<T, E> {
-	public T result;
-	public E error;
-	
-	public boolean isSuccessful() {
-		return result != null;
-	}
-	
-	public boolean hasErrorButHasResult() {
-		return result != null && error != null
-	}	
-	
-}
-
-API.getUsers() // returns ApiResult<List<User>, NetworkError>
-
-```
+# Cocoa
 
 ---
 
-```java
-ApiResult<> apiResult = API.getUsers();
-
-if (apiResult.isSuccessful()) {
-	List<Users> users = apiResult.result;
-} else {
-	NetworkError error = apiResult.error;
-}
-
-```
+- _*Foundation*_ (`NS*`)
+- _*Cocoa*_ (`UI*`)
 
 ---
 
-```java
-ApiResult<> apiResult = API.getUsers();
-
-if (apiResult.isSuccessful()) {
-	List<Users> users = apiResult.result;
-	
-} else if (apiResult.hasErrorButAlsoHasResult()) {
-	//...?
-	
-} else {
-	NetworkError error = apiResult.error;
-}
-
-```
+- _*Foundation*_ (`NS*`)
+	- `NSString`, `NSNumber`, `NSDate`, `NSData`
+- _*Cocoa*_ (`UI*`)
+	- `UIView`, `UIViewController`, `UIButton`
 
 ---
 
-# _*enumeration*_
-
-## can only be one value
+## Android _vs_ Cocoa
 
 ---
 
-```java
-public enum RegistrationProcess {
-	Unregistered,
-	RegistrationPending,
-	EmailValidation,
-	Registrered
-}
-```
+## Android _vs_ Cocoa
+
+
+- `Activity`, `Fragment` => `UIViewController`
+- `ListActivity` => `UITableViewController`
+- `GridView` => `UICollectionView`
+- `Button` => `UIButton`
+- `TextView` => `UILabel`
 
 ---
 
-```swift
-enum ApiResult<T, E> {
-	case Success(T)
-	case Error(E)
-}
-
-let result = API.getUsers() // returns ApiResult<[User], NetworkError>
-
-```
+# _demo_
 
 ---
 
-```swift
-let result = API.getUsers()
+# MAAK EEN APP
 
-switch result {
-	case let .Success(result):
-		print(result)
-		
-	case let .Error(error):
-		print(error)
-}
-```
+- een label
+- een knop
+- die afteld
+- `NSTimer.scheduledTimerWithTimeInterval`
 
 ---
 
-```swift
-class API {
-	static func getUsers() -> ApiResult<[User], NetworkError> {
-		// do some network request
-		// do some json serialization
-		// do some conversion to objects
-	}
-}
-
-```
+# Auto layout
 
 ---
 
-```swift
-class API {
-	static func getUsers() -> ApiResult<[User], NetworkError> {
-		let jsonData = NSData(contentsOfURL: NSURL(...))) // -> NSData?
-		// do some json serialization
-		// do some conversion to objects
-	}
-}
-
-```
-
----
-
-```swift
-class API {
-	static func getUsers() -> ApiResult<[User], NetworkError> {
-		if let jsonData = NSData(contentsOfURL: NSURL(...))) { // -> NSData?
-			// do some json serialization
-			// do some conversion to objects
-			// return result
-		}
-		return .Error(...)
-	}
-}
-
-```
-
----
-
-```swift
-class API {
-	static func getUsers() -> ApiResult<[User], NetworkError> {
-		if let jsonData = NSData(contentsOfURL: NSURL(...))) {
-			if let json = do some json serialization {
-				if let objects = do some conversion to objects {
-					return .Result(...)
-				}
-			}
-		}
-		return .Error(...)
-	}
-}
-
-```
-
----
-
-```swift
-class API {
-	static func getUsers() -> ApiResult<[User], NetworkError> {
-		if let jsonData = NSData(contentsOfURL: NSURL(...))) {
-			if let json = do some json serialization {
-				if let objects = do some conversion to objects {
-					return .Result(...)
-				} else {
-					return .Error(...)
-				}
-			} else {
-				return .Error(...)
-			}
-		}
-		return .Error(...)
-	}
-}
-
-```
-
----
-
-# `map`?
-
----
-
-### `Result<A> -> Result<B>`
-
----
-
-```swift
-func getData(url: NSURL) -> Result<NSData, NSError> {
-	if let data = NSData(contentsOfURL: url) {
-		return .Success(data)
-	}
-	return .Error(NSError(...))
-}
-
-func decodeData(data: NSData) -> Result<JsonData, NSError> {
-	if jsonData = doDataConversion(data) {
-		return .Success(jsonData)
-	}
-	return .Error(NSError(...))
-}
-
-let data = getData(...)
-
-let jsonData = data.map { result in 
-	decodeData(result)
-}
-
-// type jsonData?
-
-```
-
----
-
-```swift
-func getData(url: NSURL) -> Result<NSData, NSError> {
-	if let data = NSData(contentsOfURL: url) {
-		return .Success(data)
-	}
-	return .Error(NSError(...))
-}
-
-func decodeData(data: NSData) -> Result<JsonData, NSError> {
-	if jsonData = doDataConversion(data) {
-		return .Success(jsonData)
-	}
-	return .Error(NSError(...))
-}
-
-let data = getData(...) // Result<NSData, ...>
-
-let jsonData = data.map { result in
-	decodeData(result) // -> Result<JsonData, ...>
-}
-
-// Result<Result<NSData, NSError>, NSError>
-
-```
-
----
-
-```swift
-func getData(url: NSURL) -> Result<NSData, NSError> {
-	if let data = NSData(contentsOfURL: url) {
-		return .Success(data)
-	}
-	return .Error(NSError(...))
-}
-
-func decodeData(data: NSData) -> Result<JsonData, NSError> {
-	if jsonData = doDataConversion(data) {
-		return .Success(jsonData)
-	}
-	return .Error(NSError(...))
-}
-
-let data = getData(...) // Result<NSData, ...>
-
-let jsonData = data.flatMap { result in
-	decodeData(result) // -> Result<JsonData, ...>
-}
-
-// Result<NSData, NSError>
-
-```
-
----
-
-## `flatMap` 
-## `map` + `flatten`
-
----
-
-#### map: `A -> B`
-
----
-
-#### map: `Result<NSData> -> B`
-
----
-
-#### map: `Result<NSData> -> Result<Result<JsonData>>`
-
----
-
-#### map: `Result<NSData> -> Result<Result<JsonData>>`
-
-#### flatten: `Result<Result<JsonData>> -> Result<JsonData>`
-
----
-
-### flatMap: `Result<A> -> Result<B>`
-#### met *toegang* mogelijkheid tot *aanvulling* tot het result
-
----
-
-# Les1 
-## _`Result`_
-
----
-
-```swift
-
-func flatMap<A, B>(res: Result<A>, transform: A -> Result<B>) -> Result<B> {
-	switch res {
-		case let .Success(success):
-			transform(success) // returned Result<B>
-		case let .Error(error):
-			return .Error(error)
-	}
-}
-
-```
-
+# Segue
 
