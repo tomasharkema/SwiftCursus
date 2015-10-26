@@ -159,6 +159,14 @@ a.print()
 
 ---
 
+# _*SWIFT*_ is
+
+- Gemaakt door _*Chris Lattner*_
+- PR's op _*LLVM*_
+- Aangenomen bij _*Apple*_
+
+---
+
 # SYNTAX
 
 ---
@@ -541,6 +549,104 @@ print(house)
 
 ---
 
+# QUIZ
+
+---
+
+# CARDGAME
+
+---
+
+```swift
+Game {
+	var players: [Player]
+	var deck: Deck
+	
+	var turn: Int
+	
+	func turn() { }
+	func reset() { }
+}
+```
+
+---
+
+# `class`!
+
+---
+
+# `class`!
+
+- want _veel_ state
+- _*'Singleton'*_, access vanuit veel plekken
+
+---
+
+```swift
+Player {
+	var points: Int
+	var cards: [Card]
+}
+```
+
+---
+
+#`class`!
+
+---
+
+#`class`!
+- state
+
+---
+
+```swift
+Card {
+	let rank: Rank
+	let suit: Suit
+}
+```
+
+---
+
+# `struct`!
+
+---
+
+# `struct`!
+- geen state
+
+---
+
+# _*STATE*_ is evil
+
+---
+
+# _*STATE*_ is evil
+- iedereen met een _*pointer*_ kan muteren
+- sideeffects
+- FP: programmeer met _*return*_ value
+
+---
+
+```swift
+struct Game {
+	let players: [Player]
+	let deck: Deck
+	
+	let turn: Int
+	
+	func turn() -> Game { }
+	func reset() -> Game { }
+}
+```
+
+---
+
+# `Rank`, `Suit`
+
+---
+
 # `enum`
 
 ---
@@ -565,7 +671,7 @@ enum Currency: Double {
 ---
 
 ```swift
-let currency = //...
+let currency: Currency = .€ 
 
 if currency == .€ {
 	print("Uit Europa!")
@@ -577,7 +683,7 @@ if currency == .€ {
 ---
 
 ```swift
-let currency = //...
+let currency: Currency = .€
 
 if currency == .€ {
 	print("Uit Europa!")
@@ -591,6 +697,8 @@ if currency == .€ {
 ---
 
 ```swift
+let currency: Currency = .€
+
 switch currency {
 case .€:
 	print("Uit Europa!")
@@ -604,6 +712,8 @@ default:
 ---
 
 ```swift
+let currency: Currency = .€
+
 switch currency {
 case .€:
 	print("Uit Europa!")
@@ -617,6 +727,8 @@ case .$:
 ---
 
 ```swift
+let currency: Currency = .€
+
 switch currency {
 case .€:
 	print("Uit Europa!")
