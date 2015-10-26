@@ -3,6 +3,12 @@
 
 ---
 
+# Tomas Harkema
+- _*21*_ jaar
+- werk bij _*Q42*_
+
+---
+
 # _Join slack!_
 
 ## hva-ict.slack.com
@@ -24,6 +30,14 @@
 - Je kan _*Swift*_
 - Je kent _*functionele features*_ van _*Swift*_
 - Je kan een simpele _*iOS app*_ in elkaar zetten
+
+---
+
+# Programma
+- Swift: _Hallo Wereld?_
+- Swift: _Syntax_
+- Swift: _Functioneel Programmeren_
+- iOS: _Cocoa platform_
 
 ---
 
